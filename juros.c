@@ -1,16 +1,36 @@
 #include <stdio.h>
 #include <conio.h>
 
-float get(char str[1000], int i)
+void pl(char str[])
 {
+    printf("\n   %s", str);
+}
+
+void draw() {
+    pl("________________________________________________________");
+    pl("|                                                      |");
+    pl("|                      FEITO POR                       |");
+    pl("|                     cleiton#2040                     |");
+    pl("|            https://github.com/cleiton2040            |");
+    pl("|                                                      |");
+    pl("|______________________________________________________|");
+    pl("");
+}
+
+float get(char str[], int i)
+{
+    system("CLS");
+    draw();
     float variable;
     printf("\n   > %d - %s ", i, str);
     scanf("%f", &variable);
     return variable;
 }
 
-float anomes(char str[1000], int i, float valor)
+float anomes(char str[], int i, float valor)
 {
+    system("CLS");
+    draw();
     printf("\n   > %d - %s (\"a\" = ano, \"m\" = mes, sem aspas): ", i++, str);
     char t = getche();
     printf("\n");
@@ -21,24 +41,12 @@ float anomes(char str[1000], int i, float valor)
     return valor;
 }
 
-void pl(char str[1000])
-{
-    printf("\n   %s", str);
-}
-
 int main()
 {
     int i = 1;
     char tempojuros, valortodomestempo;
 
-    pl("________________________________________________________");
-    pl("|                                                      |");
-    pl("|                      FEITO POR                       |");
-    pl("|                     cleiton#2040                     |");
-    pl("|            https://github.com/cleiton2040            |");
-    pl("|                                                      |");
-    pl("|______________________________________________________|");
-    pl("");
+    draw();
 
     float valbase = get("Qual o valor inicial?", i++);                                                                          // valor-base
     float valmes = get("Algum valor sera adicionado ao decorrer do tempo?\n   Se sim, insira o valor, se nao, insira 0:", i++); // adicional
@@ -58,8 +66,28 @@ int main()
         simples = simples + valmes + jurossimples;
         compostos = compostos + valmes + (compostos / 100 * juros);
     }
-
-    printf("\n   =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=  RESULTADOS  =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=\n\n    _______________________________ PARAMETROS _______________________________\n   |\n   |  >  1. Valor base: %0.2f\n   |  >  2. Valor adicionado todo mes: %0.2f\n   |  >  3. Juros: %0.2f a.m\n   |  >  4. Duracao: %d meses (%d anos)\n   |  >  5. Valor investido no total: %0.2f\n   |\n   |_______________________________ RENDIMENTOS ______________________________\n   |\n   |  >  Rendimentos sem juros (So juntando): %0.2f\n   |  >  Rendimentos em juros simples: %0.2f\n   |  >  Rendimentos em juros compostos: %0.2f\n   |\n   |_______________________________ DIFERENCA ________________________________\n   |\n   |  >  Diferenca entre juros compostos e sem juros: %0.2f - ^ Compostos ^\n   |  >  Diferenca entre juros compostos e simples: %0.2f - ^ Compostos ^\n   |  >  Diferenca entre juros simples e sem juros: %0.2f - ^ Simples ^\n   |__________________________________________________________________________\n\n", valbase, valmes, juros, duracao, duracao / 12 , semjuros, semjuros, simples, compostos, compostos - semjuros, compostos - simples, simples - semjuros);
+    system("CLS");
+    printf("\n   =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=  RESULTADOS  =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=\n\n");
+    printf("    _______________________________ PARAMETROS _______________________________\n");
+    printf("   |\n");
+    printf("   |  >  1. Valor base: %0.2f\n", valbase);
+    printf("   |  >  2. Valor adicionado todo mes: %0.2f\n", valmes);
+    printf("   |  >  3. Juros: %0.2f a.m\n", juros);
+    printf("   |  >  4. Duracao: %d meses (%d anos)\n", duracao, (duracao / 12));
+    printf("   |  >  5. Valor investido no total: %0.2f\n", semjuros);
+    printf("   |\n");
+    printf("   |_______________________________ RENDIMENTOS ______________________________\n");
+    printf("   |\n");
+    printf("   |  >  Rendimentos sem juros (So juntando): %0.2f\n", semjuros);
+    printf("   |  >  Rendimentos em juros simples: %0.2f\n", simples);
+    printf("   |  >  Rendimentos em juros compostos: %0.2f\n", compostos);
+    printf("   |\n");
+    printf("   |_______________________________ DIFERENCA ________________________________\n");
+    printf("   |\n");
+    printf("   |  >  Diferenca entre juros compostos e sem juros: %0.2f - ^ Compostos ^\n", compostos - semjuros);
+    printf("   |  >  Diferenca entre juros compostos e simples: %0.2f - ^ Compostos ^\n", compostos - simples);
+    printf("   |  >  Diferenca entre juros simples e sem juros: %0.2f - ^ Simples ^\n", simples - semjuros);
+    printf("   |__________________________________________________________________________\n\n");
     system("pause");
     return 1;
 }
