@@ -12,4 +12,4 @@ O programa é de uso bem simples, roda por meio de um shell do Windows (v1.0 com
 **1.** Compilado com: **`GNU GCC Compiler`**<br>
 **2.** Duração de desenvolvimento: **`3 horas`**<br>
 **3.** Desenvolvido com o programa: **`CodeBlocks`**<br>
-**4.** Bibliotecas utilizadas: **`Apenas <stdio.h>`**
+**4.** Bibliotecas utilizadas: **Apenas `stdio.h` & `conio.h`**
