@@ -7,7 +7,7 @@ O programa é de uso bem simples, roda por meio de um shell do Windows (v1.0 com
 * Juros compostos<br>
 * E, para efeitos de comparação, também faz o cálculo de diferença entre as modalidades, como a diferença entre o resultado de juros simples e juros compostos, por exemplo
 > 🔎 > Abaixo tem-se uma demonstração do programa na sua v1.0<br>
-![Apresentação](https://media.discordapp.net/attachments/830519840031768657/876477596286726184/unknown.png?width=712&height=359)
+![Apresentação](https://github.com/josejooj/Juros-em-C/assets/76636096/afab1efd-5aab-4843-8703-980a8f63dcd6)
 ### 📚 > Informações adicionais
 **1.** Compilado com: **`GNU GCC Compiler`**<br>
 **2.** Duração de desenvolvimento: **`3 horas`**<br>
